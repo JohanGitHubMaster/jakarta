@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mg.itu.tpcustomerjohan;
+package mg.itu.tpcustomerjohan.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -156,8 +156,8 @@ public class Customer implements Serializable {
         return discount;
     }
 
-    public void setDiscount(Discount discountCode) {
-        this.discount = discountCode;
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
 
     public MicroMarket getZip() {
@@ -190,7 +190,7 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return "mg.itu.tpcustomerjohan.Customer[ customerId=" + customerId + " ]";
+        return "mg.itu.tpcustomerjohan.entities.Customer[ customerId=" + customerId + " ]";
     }
     
 }

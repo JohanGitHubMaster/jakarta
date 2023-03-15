@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mg.itu.tpcustomerjohan;
+package mg.itu.tpcustomerjohan.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -114,7 +114,7 @@ public class MicroMarket implements Serializable {
 
     @Override
     public String toString() {
-        return "mg.itu.tpcustomerjohan.MicroMarket[ zipCode=" + zipCode + " ]";
+        return "mg.itu.tpcustomerjohan.entities.MicroMarket[ zipCode=" + zipCode + " ]";
     }
     
 }
