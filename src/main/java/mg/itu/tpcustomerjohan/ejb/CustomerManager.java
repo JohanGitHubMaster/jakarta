@@ -29,6 +29,6 @@ public class CustomerManager {
     }
     
     public void persist(Customer customer){
-        em.persist(customer);
+       em.persist(customer);
     }
 }
