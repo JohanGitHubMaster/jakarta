@@ -9,14 +9,18 @@
     </h:head>
     <h:body>
         
-        <p:dataTable value="#{customerBean.customers}" var="item" >
+        <p:dataTable value="#{customerBean.customers}" var="item" paginator="true" rows="10"
+                     rowsPerPageTemplate="2,4,8,10"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     widgetVar="customersTable"
+                     >
+            
             <p:column>
-                <f:facet name="header">
-                    <h:outputText value="Id"/>
-                </f:facet>
-                <h:outputText value="#{item.customerId}"/>
-                
-            </p:column>
+            <f:facet name="header" >
+              <h:outputText value="CustomerId"/>
+            </f:facet>
+            <h:outputText value="#{item.customerId}"/>
+          </p:column>
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Nom"/>
