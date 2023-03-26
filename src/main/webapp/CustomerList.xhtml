@@ -16,13 +16,23 @@
                      rowsPerPageTemplate="2,4,8,10"
                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                      widgetVar="customersTable"
+                     emptyMessage="Aucun client avec ce critère"
                      >
             
+                <f:facet name="header">
+                 <p:outputPanel>
+                    <h:outputText value="Recherche dans tous les champs de recherche"/>
+                    <p:inputText id="globalFilter" onkeyup="PF('customersTable').filter()"
+                                 style="width:150px"/>
+                 </p:outputPanel>
+                </f:facet>
+                        
             <p:column sortBy="#{item.customerId}">
             <f:facet name="header" >
               <h:outputText value="CustomerId"/>
             </f:facet>
-            <h:outputText value="#{item.customerId}"/>
+            <h:link outcome="customerDetails?idCustomer=#{item.customerId}" 
+             value="#{item.customerId}"/>
           </p:column>
             <p:column sortBy="#{item.name}" filterBy="#{item.name}">
             <f:facet name="header">
@@ -58,7 +68,7 @@
         </p:dataTable>
                     
                 </h:form>
-            </f:view>>
+            </f:view>
         
     </h:body>
 </html>
