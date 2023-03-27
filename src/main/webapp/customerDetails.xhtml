@@ -44,19 +44,16 @@
       
           
           
-          
-          
-          <h:selectOneMenu id="discount" value="#{customerDetailsBean.customer.discount}"   
-                    title="Discount" required="true" 
-                    requiredMessage="The Discount field is required."  
-                    converter="discountConverter">   
-       <f:selectItems value="#{customerDetailsBean.discounts}"  
-                      var="item"   
-                       itemValue="#{item}" />  
-   </h:selectOneMenu>
-      
-      
-      
+          <h:selectOneMenu 
+            id="discount" value="#{customerDetailsBean.customer.discount}" 
+            title="Discount" required="true" requiredMessage="The Discount field is required."
+            converter="discountConverter">
+            <f:selectItems value="#{customerDetailsBean.discounts}"
+                           var="discount"
+                           itemLabel="#{discount.code} : #{discount.rate}" 
+                           itemValue="#{discount}"/>
+        </h:selectOneMenu>
+              
       <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update}"/>
      </h:panelGrid>
    

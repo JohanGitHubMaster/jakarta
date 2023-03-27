@@ -23,10 +23,49 @@ public class CustomerBean implements Serializable {
     /**
      * Creates a new instance of CustomerBean
      */
+    private int idCustomer;
+    
+    
+    
    private List<Customer> customerList;
   @EJB
   private CustomerManager customerManager; 
     
+  private Customer customer;
+
+    public void setIdCustomer(int idCustomer) {
+        this.idCustomer = idCustomer;
+    }
+
+    public int getIdCustomer() {
+        return idCustomer;
+    }
+    
+    /**
+   * Retourne les détails du client courant (contenu dans l'attribut customer de
+   * cette classe).
+     * @return 
+   */
+    public Customer getCustomer() {
+      return customer;
+    }
+    
+    /**
+   * Action handler - met à jour dans la base de données les données du client
+   * contenu dans la variable d'instance customer.
+   * @return la prochaine page à afficher, celle qui affiche la liste des clients.
+   */
+  public String update() {
+    // Modifie la base de données.
+    // Il faut affecter à customer (sera expliqué dans le cours).
+    customer = customerManager.update(customer);
+    return "customerList";
+  }
+  
+  public void loadCustomer() {
+    this.customer = customerManager.findById(idCustomer);
+  }
+  
     public CustomerBean() {
     }
     
